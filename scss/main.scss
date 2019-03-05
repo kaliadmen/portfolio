@@ -1,4 +1,5 @@
 @import 'config';
+@import 'menu';
 
 *{
   box-sizing: border-box;
@@ -48,6 +49,7 @@ header{
 main{
   padding: 4rem;
   height: 100%;
+  text-align: center;
 
 
   .icons{
