@@ -6,9 +6,9 @@
 }
 
 body{
-  @include backgound;
+  @include background;
   background-color: $primary-color;
-  color: #fff;
+  color: change-text-color($primary-color);
   height: 100%;
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -32,7 +32,7 @@ h1,h2,h3{
 }
 
 a{
-  color: #fff;
+  color: change-text-color($primary-color);
   text-decoration: none;
 }
 
@@ -43,12 +43,14 @@ header{
 }
 
 .text-secondary{
-  color: $secodary-color;
+  color: lighten($secodary-color, 9);
+  font-weight: 500;
 }
 
 main{
   padding: 4rem;
-  height: 100%;
+  //height: 100%;
+  min-height: calc(100vh - 60px);
   text-align: center;
 
 
@@ -73,6 +75,54 @@ main{
   }
 }
 
+.about-info{
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas:
+  'bioimage bio bio'
+  'job1 job2 job3';
+  grid-auto-columns: repeat(3, 1fr);
+
+  .bio-image{
+    grid-area: bioimage;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin: auto;
+    border: $secodary-color 3px solid;
+  }
+
+  .bio{
+    grid-area: bio;
+    font-size: 1.5rem;
+  }
+
+  .job{
+    background: lighten($primary-color,5);
+    padding: 0.5rem;
+    border-bottom: $secodary-color 5px solid;
+  }
+
+  .job-1{
+    grid-area: job1;
+  }
+
+  .job-2{
+    grid-area: job2;
+  }
+
+  .job-3{
+    grid-area: job3;
+  }
+}
+
+#main-footer{
+  text-align: center;
+  padding: 1rem;
+  background: darken($primary-color, 10);
+  color: set-text-color($primary-color);
+  height: 60px;
+}
 
 //Particles Background
 #x1{
@@ -85,3 +135,5 @@ canvas{
   position: fixed;
   z-index: -1;
 }
+
+@import 'moblie';
