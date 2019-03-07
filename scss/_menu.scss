@@ -129,7 +129,7 @@
 
 
 //Delays nav items
-@for $i from 1 through 4{
+@for $i from 1 through 3{
   .nav-item:nth-child(#{$i}){
     transition-delay: $i * 0.2s;
   }
